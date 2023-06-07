@@ -4,7 +4,16 @@
 @section('title', 'Produtos')
 
 @section('content')
-<table border="1" style="border-color:chartreuse">
+
+@if (session('sucesso'))
+    <div style="background-color:greenyellow;color:rebeccapurple;">
+        <marquee>
+        🎆 {{ session('sucesso') }}
+        </marquee>
+    </div>
+@endif
+
+<table border="1" style="border-color:rgb(52, 214, 87)">
     <tr>
         <th>Nome</th>
         <th>Preço</th>
