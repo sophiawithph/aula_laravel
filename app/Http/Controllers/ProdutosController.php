@@ -11,6 +11,12 @@ class ProdutosController extends Controller
     public function index() {
         $prods = Produto::all();
 
+        # Busca tudo com apagados
+        # $prods = Produto::withTrashed()->get();
+
+        # Busca apenas apagados
+        # $prods = Produto::onlyTrashed()->get();
+
         return view('produtos.index', [
             'prods' => $prods,
         ]);
