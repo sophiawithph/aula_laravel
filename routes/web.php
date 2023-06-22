@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Route::get('/produtos', [ProdutosController::class, 'index'])->name('produtos');
 
+Route::post('/produtos', [ProdutosController::class, 'index']);
+
 Route::get('/produtos/add', [ProdutosController::class, 'add'])->name('produtos.add');
 
 Route::post('/produtos/add', [ProdutosController::class, 'addSave'])->name('produtos.addSave');
@@ -33,3 +35,5 @@ Route::post('/produtos/edit/{produto}', [ProdutosController::class, 'editSave'])
 Route::get('/produtos/delete/{produto}', [ProdutosController::class, 'delete'])->name('produtos.delete');
 
 Route::delete('/produtos/delete/{produto}', [ProdutosController::class, 'deleteForReal'])->name('produtos.deleteForReal');
+
+
