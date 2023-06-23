@@ -1,0 +1,11 @@
+body{
+    background-color: rgb(173, 241, 250);
+}
+.pagination{
+    border:2px dashed;
+}
+ li{
+    float: left;
+    list-style-type: none;
+
+}

@@ -18,7 +18,8 @@ class ProdutosController extends Controller
              ->orderBy('name', $ord)
              ->get();
     }else{
-        $prods = Produto::all();
+        $prods = Produto::paginate();
+        // $prods = Produto::all();
     }
 
         # Busca tudo com apagados

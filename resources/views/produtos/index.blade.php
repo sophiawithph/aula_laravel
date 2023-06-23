@@ -23,6 +23,8 @@
     <input type="submit" value="Buscar">
 </form>
 <br>
+<a href="{{ route('produtos.add') }}"><button>Adicionar produto</button></a>
+<br><br>
 <table border="1" style="border-color:rgb(52, 214, 87)">
     <tr>
         <th>Nome</th>
@@ -44,5 +46,6 @@
 
 </table>
 
-<a href="{{ route('produtos.add') }}">Adicionar produto</a>
+{{ $prods->links('vendor.pagination.default') }}
+
 @endsection
