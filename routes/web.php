@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\UsuariosController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -60,7 +61,17 @@ Route::post('login', [UsuariosController::class, 'login'])->name('login');
 
 Route::get('logout', [UsuariosController::class, 'logout'])->name('logout');
 // Route::delete('/usuarios/delete/{produto}', [UsuarioController::class, 'deleteForReal'])->name('usuario.deleteForReal');
+Route::get('/email/verify', function(){
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
 
+Route::get('/email/verify/{id}/{hash}', function(EmailVerificationRequest $request){
+    $request->fulfill();
+    return redirect()->route('home');
+})->middleware(['auth','signed'])->name('verification.verify');
+// URL::signedRoute('verification.verify', [
+//     'id' => Auth
+// ])
 
 
 
